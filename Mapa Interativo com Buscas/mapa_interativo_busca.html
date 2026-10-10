@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_df1ce87317e7deb135a2b91a4c909894 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_df1ce87317e7deb135a2b91a4c909894" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_df1ce87317e7deb135a2b91a4c909894 = L.map(
+                "map_df1ce87317e7deb135a2b91a4c909894",
+                {
+                    center: [15.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_63fd40f4fb84d6df795102a1888e4f97 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_63fd40f4fb84d6df795102a1888e4f97.addTo(map_df1ce87317e7deb135a2b91a4c909894);
+        
+    
+            var tile_layer_7165eb2e5d70188ca7e03206c9e65e2a = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7165eb2e5d70188ca7e03206c9e65e2a.addTo(map_df1ce87317e7deb135a2b91a4c909894);
+        
+    
+            var layer_control_f0a28e32ab43c4d89011324af817bf15_layers = {
+                base_layers : {
+                    "Esri World Street Map" : tile_layer_63fd40f4fb84d6df795102a1888e4f97,
+                    "Stamen Toner Lite" : tile_layer_7165eb2e5d70188ca7e03206c9e65e2a,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_f0a28e32ab43c4d89011324af817bf15 = L.control.layers(
+                layer_control_f0a28e32ab43c4d89011324af817bf15_layers.base_layers,
+                layer_control_f0a28e32ab43c4d89011324af817bf15_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_df1ce87317e7deb135a2b91a4c909894);
+
+        
+    
+
+            var geocoderOpts_geocoder_119f77fbca05321d21659221f8adc8fe = {
+  "collapsed": false,
+  "position": "topleft",
+  "defaultMarkGeocode": true,
+  "zoom": 11,
+  "provider": "nominatim",
+  "providerOptions": {
+},
+};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_119f77fbca05321d21659221f8adc8fe = geocoderOpts_geocoder_119f77fbca05321d21659221f8adc8fe["provider"];
+
+            var customGeocoder_geocoder_119f77fbca05321d21659221f8adc8fe = L.Control.Geocoder[ geocoderName_geocoder_119f77fbca05321d21659221f8adc8fe ](
+                geocoderOpts_geocoder_119f77fbca05321d21659221f8adc8fe['providerOptions']
+            );
+            geocoderOpts_geocoder_119f77fbca05321d21659221f8adc8fe["geocoder"] = customGeocoder_geocoder_119f77fbca05321d21659221f8adc8fe;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_119f77fbca05321d21659221f8adc8fe
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_119f77fbca05321d21659221f8adc8fe['zoom'] || map_df1ce87317e7deb135a2b91a4c909894.getZoom();
+                map_df1ce87317e7deb135a2b91a4c909894.setView(e.geocode.center, zoom);
+            }).addTo(map_df1ce87317e7deb135a2b91a4c909894);
+
+        
+</script>
+</html>
